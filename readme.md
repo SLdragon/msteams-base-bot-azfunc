@@ -112,6 +112,8 @@ Send a message in the chat with the word `/clear`.
 - Update code inside src folder
 - update [package.json](./bot/package.json) file to copy public folder to `dist` folder
 
+All above changes can be found in this commit: https://github.com/SLdragon/msteams-base-bot-azfunc/commit/fbf623d0f1cbf74c22a97913e5f9963ee2416ca3
+
 ## Current limitations
 - TeamsFx currently doesn't support sso adaptive card action, this sample project uses the [modified teamsfx sdk](./bot/src/sdk/) in source folder to implement sso feature
 
