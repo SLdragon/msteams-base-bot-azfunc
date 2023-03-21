@@ -1,4 +1,4 @@
-import { InvokeResponseFactory, TeamsFxAdaptiveCardActionHandler } from "@microsoft/teamsfx";
+import { InvokeResponseFactory, TeamsFxAdaptiveCardActionHandler } from "../sdk";
 import { TurnContext, InvokeResponse } from "botbuilder";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import formSubmitCard from "../cards/formSubmit.json";

@@ -1,5 +1,5 @@
 import { ContainerClient } from "@azure/storage-blob";
-import { NotificationTargetStorage } from "@microsoft/teamsfx";
+import { NotificationTargetStorage } from "../sdk";
 
 // A sample implementation to use Azure Blob Storage as notification target storage
 export class BlobsStorage implements NotificationTargetStorage {

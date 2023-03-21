@@ -13,7 +13,17 @@ const httpTrigger: AzureFunction = async function (
 
   // process the request
   const res = new ResponseWrapper(context.res);
-  await bot.adapter.process(req, res, (context) => botActivityHandler.run(context))
+  try{
+    await bot.adapter.process(req, res, (context) => botActivityHandler.run(context))
+  }
+  catch(err){
+    if(err.message.includes("412")) {
+      // Error message including "412" means it is waiting for user's consent, which is a normal process of SSO, sholdn't throw this error.
+    }
+    else {
+      throw err;
+    }
+  }
   
   // return the response
   return res.body;

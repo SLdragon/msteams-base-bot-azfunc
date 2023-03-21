@@ -6,10 +6,10 @@
     "license": "MIT",
     "scripts": {
         "dev:teamsfx": "env-cmd --silent -f .env.teamsfx.local npm run dev",
-        "dev": "func start --typescript --language-worker=\"--inspect=9239\" --port \"3978\" --cors \"*\"",
+        "dev": "tsc && shx cp -r ./src/public ./dist/src && func start --typescript --language-worker=\"--inspect=9239\" --port \"3978\" --cors \"*\"",
         "prepare-storage:teamsfx": "azurite --silent --location ./_storage_emulator --debug ./_storage_emulator/debug.log",
         "watch:teamsfx": "tsc --watch",
-        "build": "tsc && shx cp -r ./src/adaptiveCards ./dist/src",
+        "build": "tsc && shx cp -r ./src/public ./dist/src",
         "watch": "tsc -w",
         "prestart": "npm run build",
         "start": "npx func start",
@@ -24,7 +24,8 @@
         "@microsoft/adaptivecards-tools": "^1.0.0",
         "@microsoft/teamsfx": "^2.0.0",
         "botbuilder": "^4.17.0",
-        "botbuilder-azure-blobs": "^4.19.1"
+        "botbuilder-azure-blobs": "^4.19.1",
+        "isomorphic-fetch": "^3.0.0"
     },
     "devDependencies": {
         "@azure/functions": "^1.2.3",

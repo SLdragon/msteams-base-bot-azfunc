@@ -98,3 +98,25 @@ Send a message in the chat with the word `/clear`.
 - [Respond to chat commands in Teams](https://github.com/OfficeDev/TeamsFx/wiki/Respond-to-chat-commands-in-Teams)
 - [Respond to card actions in Teams](https://github.com/OfficeDev/TeamsFx/wiki/Respond-to-card-actions-in-Teams)
 - [Designing adaptive cards for your Microsoft Teams app](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/design-effective-cards?tabs=design&WT.mc_id=m365-90825-cxa)
+
+
+## SSO feature screenshot
+![](./images/sso-function-bot.gif)
+
+## Quick steps about how to support sso
+- Add [aad.template.json](./templates/appPackage/aad.template.json)
+- Update [manifest.template.json](./templates/appPackage/manifest.template.json) file
+- Update [projectSettings.json](./.fx/configs/projectSettings.json)
+- Update [tasks.json](./.vscode/tasks.json)
+- Add `authPageHandler` to host `auth-start` and `auth-end` page
+- Update code inside src folder
+- update [package.json](./bot/package.json) file to copy public folder to `dist` folder
+
+## Current limitations
+- TeamsFx currently doesn't support sso adaptive card action, this sample project uses the [modified teamsfx sdk](./bot/src/sdk/) in source folder to implement sso feature
+
+- Current sso adaptive card implementation doesn't support group chat
+
+- In the future maybe several month later, we will support sso adaptive card feature based on latest adaptive card sso feature here: https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/universal-actions-for-adaptive-cards/enable-sso-for-your-adaptive-cards-universal-action 
+
+

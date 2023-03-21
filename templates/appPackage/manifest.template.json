@@ -40,6 +40,10 @@
                         {
                             "title": "form",
                             "description": "Example form"
+                        },
+                        {
+                            "title": "profile",
+                            "description": "show profile"
                         }
                     ]
                 }
@@ -55,5 +59,9 @@
     ],
     "validDomains": [
         "{{state.fx-resource-bot.domain}}"
-    ]
+    ],
+    "webApplicationInfo": {
+        "id": "{{state.fx-resource-aad-app-for-teams.clientId}}",
+        "resource": "api://botid-{{state.fx-resource-bot.botId}}"
+      }
 }
